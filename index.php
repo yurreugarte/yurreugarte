@@ -13,6 +13,8 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/myTheme.min.css">
+    <!-- https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class -->
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
 
 <body>
