@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php // Place favicon.ico in the root directory ?>
 
-    <link rel="stylesheet" href="css/myTheme.min.css">
+    <link rel="stylesheet" href="css/my-theme.min.css">
     <?php 
         // https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class
         // Si cargamos modernizr este script no es necesario
@@ -43,11 +43,11 @@ if ($esServidorDeDesarrollo) {
     <script src="src/bootstrap/js/dist/scrollspy.js"></script>
     <script src="src/bootstrap/js/dist/tab.js"></script>
     <script src="src/js/plugins.js"></script>
-    <script src="src/js/myScript.js"></script>
+    <script src="src/js/my-script.js"></script>
 <?php
 } else {
 ?>
-    <script src="js/myTheme.min.js"></script>
+    <script src="js/my-theme.min.js"></script>
 <?php
 }
 ?>
