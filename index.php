@@ -7,8 +7,6 @@
     <title>Plantilla HTML 5 - Bootstrap 4</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="manifest" href="site.webmanifest">
     <?php // Place favicon.ico in the root directory ?>
 
     <link rel="stylesheet" href="css/myTheme.min.css">
