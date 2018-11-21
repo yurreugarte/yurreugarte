@@ -1,0 +1,6 @@
+AuthType basic
+require valid-user
+AuthUserFile /da/igual/lo/que/pongamos/aqui/.htpasswd
+AuthName "Administrador - Acceso Restringido"
+
+Options -Indexes
