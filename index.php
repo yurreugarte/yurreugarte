@@ -13,14 +13,17 @@
     <?php // Place favicon.ico in the root directory ?>
 
     <link rel="stylesheet" href="css/myTheme.min.css">
-    <?php // https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class ?>
+    <?php 
+        // https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class
+        // Si cargamos modernizr este script no es necesario
+    ?>
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
 
 <body>
-    <?php //[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]?>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
 
     <?php // Add your site or application content here ?>
     <p>Hello world! This is HTML5 Boilerplate.</p>
@@ -43,7 +46,7 @@ if ($esServidorDeDesarrollo) {
     <script src="src/bootstrap/js/dist/scrollspy.js"></script>
     <script src="src/bootstrap/js/dist/tab.js"></script>
     <script src="src/js/plugins.js"></script>
-    <script src="src/js/custom.js"></script>
+    <script src="src/js/myScript.js"></script>
 <?php
 } else {
 ?>

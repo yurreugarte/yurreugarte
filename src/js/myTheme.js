@@ -12,4 +12,4 @@
 // @koala-prepend "../bootstrap/js/dist/scrollspy.js"
 // @koala-prepend "../bootstrap/js/dist/tab.js"
 // @koala-prepend "plugins.js"
-// @koala-prepend "custom.js"
+// @koala-prepend "myScript.js"
