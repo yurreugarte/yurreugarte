@@ -28,7 +28,18 @@ $esServidorDeDesarrollo = preg_match("/.*local$/i", $_SERVER['HTTP_HOST']);
 if ($esServidorDeDesarrollo) {
 ?>
     <script src="src/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="src/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="src/js/vendor/popper.js"></script>
+    <script src="src/bootstrap/js/dist/util.js"></script>
+    <script src="src/bootstrap/js/dist/alert.js"></script>
+    <script src="src/bootstrap/js/dist/button.js"></script>
+    <script src="src/bootstrap/js/dist/carousel.js"></script>
+    <script src="src/bootstrap/js/dist/collapse.js"></script>
+    <script src="src/bootstrap/js/dist/dropdown.js"></script>
+    <script src="src/bootstrap/js/dist/modal.js"></script>
+    <script src="src/bootstrap/js/dist/tooltip.js"></script>
+    <script src="src/bootstrap/js/dist/popover.js"></script>
+    <script src="src/bootstrap/js/dist/scrollspy.js"></script>
+    <script src="src/bootstrap/js/dist/tab.js"></script>
     <script src="src/js/plugins.js"></script>
     <script src="src/js/custom.js"></script>
 <?php
