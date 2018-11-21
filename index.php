@@ -10,19 +10,19 @@
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <?php // Place favicon.ico in the root directory ?>
 
     <link rel="stylesheet" href="css/myTheme.min.css">
-    <!-- https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class -->
+    <?php // https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class ?>
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
 
 <body>
-    <!--[if lte IE 9]>
+    <?php //[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
+    <![endif]?>
 
-    <!-- Add your site or application content here -->
+    <?php // Add your site or application content here ?>
     <p>Hello world! This is HTML5 Boilerplate.</p>
     
 <?php
@@ -51,7 +51,7 @@ if ($esServidorDeDesarrollo) {
 <?php
 }
 ?>
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <?php // Google Analytics: change UA-XXXXX-Y to be your site's ID. ?>
     <script>
         window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
         ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
