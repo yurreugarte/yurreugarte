@@ -18,7 +18,22 @@
 </head>
 
 <body>
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <h1>HTML5 Boilerplate + Bootstrap 4</h1>
+    <h2>CSS</h2>
+    <p>El archivo <code>css/my-theme.min.css</code> no incluye todos los elementos de Bootstrap.</p>
+    <p>Si necesitas añadir algún elemento de Bootstrap, lo encontrarás en el directorio <code>src/bootstrap/scss</code>.<br>Hazlo en el archivo <code>src/scss/my-theme.scss</code> y vuelve a generar el archivo <code>css/my-theme.min.css</code> a partir de él.</p>
+    <h2>JavaScript</h2>
+    <h3>Cómo añadir plugins de Bootstrap</h3>
+    <p>El archivo <code>js/my-theme.min.js</code> no incluye ninguno de los plugins de Bootstrap.</p>
+    <p>Si necesitas añadir algún plugin de Bootstrap, lo encontrarás en el directorio <code>src/bootstrap/js/dist</code>.<br>Hazlo en el archivo <code>src/js/my-theme.js</code> y vuelve a generar el archivo <code>js/my-theme.min.js</code> a partir de él.</p>
+    <p>El orden de carga de los archivos es importante. Ten en cuenta las siguientes dependencias:</p>
+    <ul>
+        <li>Todos los plugins dependen del archivo <code>src/bootstrap/js/dist/util.js</code></li>
+        <li>Dropdowns, popovers y tooltips dependen del archivo <code>src/js/vendor/popper.js</code></li>
+        <li>Los popover dependen también de <code>src/bootstrap/js/dist/tooltip.js</code></li>
+    </ul>
+    <p>Si usas koala para generar el archivo <code>js/my-theme.min.js</code>, utiliza la instrucción <a href="https://github.com/oklai/koala/wiki/JS-CSS-minify-and-combine#combine-js-files" target="_blank">koala-prepend</a>.</p>
+    <p>Si necesitas todos los plugins, <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/#js" rel="external">carga el archivo aunado y minificado de Bootstrap desde la CDN</a> en lugar de incluirlos en <code>js/my-theme.min.js</code>.<br>Como en el ejemplo, carga Bootstrap después de jQuery y Popper.js.</p>
     
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
