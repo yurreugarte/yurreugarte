@@ -20,11 +20,12 @@
 <body>
     <p>Hello world! This is HTML5 Boilerplate.</p>
     
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 <?php
 $esServidorDeDesarrollo = preg_match("/.*local$/i", $_SERVER['HTTP_HOST']);
 if ($esServidorDeDesarrollo) {
 ?>
-    <script src="src/js/vendor/jquery-3.3.1.min.js"></script>
     <script src="src/js/vendor/popper.js"></script>
     <script src="src/bootstrap/js/dist/util.js"></script>
     <script src="src/bootstrap/js/dist/alert.js"></script>

@@ -1,4 +1,3 @@
-// @koala-prepend "vendor/jquery-3.3.1.min.js"
 // @koala-prepend "vendor/popper.js"
 // @koala-prepend "../bootstrap/js/dist/util.js"
 // @koala-prepend "../bootstrap/js/dist/alert.js"
