@@ -4,3 +4,6 @@
 User-agent: *
 Disallow: /AAA-LEEME
 Disallow: /src
+Disallow: /404.html
+Disallow: /*?*
+Allow: /*?v=*
