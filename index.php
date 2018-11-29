@@ -23,6 +23,10 @@
     <p>El archivo <code>css/my-theme.min.css</code> no incluye todos los elementos de Bootstrap.</p>
     <p>Si necesitas añadir algún elemento de Bootstrap, lo encontrarás en el directorio <code>src/bootstrap/scss</code>.<br>Hazlo en el archivo <code>src/scss/my-theme.scss</code> y vuelve a generar el archivo <code>css/my-theme.min.css</code> a partir de él.</p>
     <h2>JavaScript</h2>
+    <h3>Registro en analytics de enlaces externos y de descarga</h3>
+    <p>El código básico de registro del tráfico del sitio web en analytics es de desarrollo propio y está añadido al archivo <code>/js/my-theme.min.js</code> por defecto.<br>
+    Si para registrar el tráfico del sitio usamos GTM (Google Tag Manager) eliminaremos el archivo <code>src/js/adimedia-external-links-analytics.js</code> de <code>src/js/my-theme.js</code> y volveremos a generar el minificado.</p>
+    <p>Consulta en el código fuente, al final de la página, las opciones de configuración.</p>
     <h3>Cómo añadir plugins de Bootstrap</h3>
     <p>El archivo <code>js/my-theme.min.js</code> no incluye ninguno de los plugins de Bootstrap.</p>
     <p>Si necesitas añadir algún plugin de Bootstrap, lo encontrarás en el directorio <code>src/bootstrap/js/dist</code>.<br>Hazlo en el archivo <code>src/js/my-theme.js</code> y vuelve a generar el archivo <code>js/my-theme.min.js</code> a partir de él.</p>
@@ -54,11 +58,25 @@ if ($esServidorDeDesarrollo) {
     <script src="src/bootstrap/js/dist/scrollspy.js"></script>
     <script src="src/bootstrap/js/dist/tab.js"></script>
     <script src="src/js/plugins.js"></script>
+    <script src="src/js/adimedia-external-links-analytics.js"></script>
     <script src="src/js/my-script.js"></script>
 <?php
 } else {
 ?>
     <script src="js/my-theme.min.js"></script>
+<?php
+}
+?>
+<script type="text/javascript">
+    RWD.config.enlacesVentanaNueva.mensaje = 'Se abrirá en ventana nueva';
+    RWD.config.enlacesVentanaNueva.carpetasDescargas = ['documents', 'images'];
+    RWD.config.enlacesVentanaNueva.extensionesArchivosDescargables = ["pdf", "doc", "docx", "zip", "odt", "xls", "xlsx"];
+    RWD.config.enlacesVentanaNueva.clasesCssExcluidas = ['galeria', 'baner'];
+    RWD.config.enlacesVentanaNueva.subdominiosExcluidos = ['subdomain.com'];
+</script>
+<?php
+if ($esServidorDeDesarrollo === false) {
+?>
     <?php // Google Analytics: change UA-XXXXX-Y to be your site's ID. ?>
     <script>
         window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
