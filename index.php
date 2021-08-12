@@ -1,3 +1,6 @@
+<?php
+    $esServidorDeDesarrollo = preg_match("/.*local$/i", $_SERVER['HTTP_HOST']);
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -8,7 +11,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php // Place favicon.ico in the root directory ?>
-
+<?php
+if ($esServidorDeDesarrollo === false) {
+?>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <!-- End Google Tag Manager -->
+<?php
+}
+?>
     <link rel="stylesheet" href="css/my-theme.min.css">
     <?php 
         // https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class
@@ -18,6 +33,16 @@
 </head>
 
 <body>
+<?php
+if ($esServidorDeDesarrollo === false) {
+?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<?php
+}
+?>
     <h1>HTML5 Boilerplate + Bootstrap 4</h1>
     <h2>CSS</h2>
     <p>El archivo <code>css/my-theme.min.css</code> no incluye todos los elementos de Bootstrap.</p>
@@ -42,7 +67,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 <?php
-$esServidorDeDesarrollo = preg_match("/.*local$/i", $_SERVER['HTTP_HOST']);
 if ($esServidorDeDesarrollo) {
 ?>
     <script src="src/js/vendor/popper.js"></script>
@@ -74,18 +98,6 @@ if ($esServidorDeDesarrollo) {
     RWD.config.enlacesVentanaNueva.clasesCssExcluidas = ['galeria', 'baner'];
     RWD.config.enlacesVentanaNueva.subdominiosExcluidos = ['subdomain.com'];
 </script>
-<?php
-if ($esServidorDeDesarrollo === false) {
-?>
-    <?php // Google Analytics: change UA-XXXXX-Y to be your site's ID. ?>
-    <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-<?php
-}
-?>
 </body>
 
 </html>
