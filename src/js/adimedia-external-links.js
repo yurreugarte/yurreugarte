@@ -1,20 +1,18 @@
 "use strict";
 
 /*
-	Abrir en ventana nueva y registrar en analytics con ga enlaces creados en tiempo de ejecución:
+	Abrir en ventana nueva enlaces creados en tiempo de ejecución:
 
 	1.- Un enlace:
 
 	var nuevoEnlace = document.getElementById('nuevoEnlace');
 	RWD.utils.enlaces.abrirVentanaNueva([nuevoEnlace]);
-	RWD.utils.ga.registrarActividadUsuario([nuevoEnlace]);
 
 	2.- Varios enlaces:
 
 	var nuevosEnlaces = document.querySelectorAll('.nuevoEnlace');
 	nuevosEnlaces = RWD.utils.dom.nodeListToArray(nuevosEnlaces);
 	RWD.utils.enlaces.abrirVentanaNueva(nuevosEnlaces);
-	RWD.utils.ga.registrarActividadUsuario(nuevosEnlaces);
 */
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/matches
@@ -214,110 +212,11 @@ RWD.utils.enlaces = (function (config, utilsArray, utilsDom) {
 		}
 	}
 
-	function addDataRegistroAnalytics(element) {
-		var tipo = esEnlaceExterno(element) ? 'Enlace externo' : '';
-		tipo = tipo || (esEnlaceCarpetaDescargas(element) ? 'Documento' : '');
-		tipo = tipo || (esEnlaceArchivoDescargable(element) ? 'Documento' : '');
-
-		var evento = esEnlaceExterno(element) ? 'click' : '';
-		evento = evento || (esEnlaceCarpetaDescargas(element) ? 'descarga' : '');
-		evento = evento || (esEnlaceArchivoDescargable(element) ? 'descarga' : '');
-
-		if (tipo !== '' && evento !== '') {
-			var dataContent = '{"tipo":"' + tipo + '","evento":"' + evento + '"}';
-			element.setAttribute(dataAttributeRegistroAnalytics, dataContent);
-		}
-	}
-
-	function getDataAttributeRegistroAnalyticsName() {
-		return dataAttributeRegistroAnalytics;
-	}
-
 	return {
-		abrirVentanaNueva: abrirVentanaNueva,
-		addDataRegistroAnalytics: addDataRegistroAnalytics,
-		getDataAttributeRegistroAnalyticsName: getDataAttributeRegistroAnalyticsName,
-		manipulaEnlacesExternosDescargas: manipulaEnlacesExternosDescargas,
+		abrirVentanaNueva: abrirVentanaNueva
 	}
 })(RWD.config.enlacesVentanaNueva, RWD.utils.array, RWD.utils.dom);
 
-RWD.utils.ga = (function (utilsEnlaces) {
-	var iniciado = false;
-
-	function registrarActividadUsuario(enlaces) {
-		enlaces = enlaces || [];
-
-		var existeGTM = existeGoogleTagManager();
-		var existeGA = existeGoogleAnalytics();
-
-		if (existeGTM === false && existeGA === true) {
-			manipulaEnlacesExternosDescargas(enlaces);
-
-			if (!iniciado) {
-				registrarListeners();
-				iniciado = true;
-			}
-		}
-	}
-
-	function existeGoogleTagManager() {
-		return typeof google_tag_manager !== 'undefined';
-	}
-
-	function existeGoogleAnalytics() {
-		return typeof ga === 'function';
-	}
-
-	function manipulaEnlacesExternosDescargas(enlaces) {
-		enlaces = enlaces || [];
-
-		utilsEnlaces.manipulaEnlacesExternosDescargas(enlaces, [utilsEnlaces.addDataRegistroAnalytics]);
-	}
-
-	function registrarListeners() {
-		document.addEventListener('click', registraClicksMails);
-		document.addEventListener('click', registraClicksTelefonos);
-		document.addEventListener('click', registraClicksEnlacesExternosDescargas);
-	}
-
-	function registraClicksMails(event) {
-		var selector = '[href^="mailto"]';
-
-		if (event.target.matches(selector)) {
-			var url = event.target.getAttribute('href');
-			ga('send', 'event', 'Email', 'click', url);
-		}
-	}
-
-	function registraClicksTelefonos(event) {
-		var selector = '[href^="tel"]';
-
-		if (event.target.matches(selector)) {
-			var url = event.target.getAttribute('href');
-			ga('send', 'event', 'Teléfono', 'click', url);
-		}
-	}
-
-	function registraClicksEnlacesExternosDescargas(event) {
-		var dataAttrName = utilsEnlaces.getDataAttributeRegistroAnalyticsName();
-		var selector = '[' + dataAttrName + ']';
-
-		if (event.target.matches(selector)) {
-			var url = event.target.getAttribute('href');
-			var data = event.target.getAttribute(dataAttrName);
-			data = JSON.parse(data);
-			var tipo = data.tipo;
-			var evento = data.evento;
-			ga('send', 'event', tipo, evento, url);
-		}
-	}
-
-	return {
-		registrarActividadUsuario: registrarActividadUsuario,
-	}
-})(RWD.utils.enlaces);
-
 window.addEventListener('load', function () {
 	RWD.utils.enlaces.abrirVentanaNueva();
-	RWD.utils.ga.registrarActividadUsuario();
 });
