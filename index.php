@@ -82,7 +82,7 @@ if ($esServidorDeDesarrollo) {
     <script src="src/bootstrap/js/dist/scrollspy.js"></script>
     <script src="src/bootstrap/js/dist/tab.js"></script>
     <script src="src/js/plugins.js"></script>
-    <script src="src/js/adimedia-external-links-analytics.js"></script>
+    <script src="src/js/adimedia-external-links.js"></script>
     <script src="src/js/my-script.js"></script>
 <?php
 } else {
