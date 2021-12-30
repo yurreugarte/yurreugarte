@@ -1,0 +1,17 @@
+#grid-body{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 
+        auto /* HEADER */
+        1fr /* CONTENT */
+        auto; /* FOOTER */
+
+    @include media-breakpoint-up(md) {     
+        height: 100vh;
+    }
+}
+

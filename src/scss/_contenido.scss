@@ -1,0 +1,189 @@
+html {
+	scroll-behavior: smooth;
+}
+
+h1, .h1 { font-family: $font-family-semibold; }
+h2, .h2 { font-family: $font-family-semibold; }
+
+.btn {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	padding:  0.375rem 1.563rem;
+}
+
+.btn-secondary {
+	color: #FFFFFF;
+}
+
+/*** LIBROS ****/
+.lista-libros {
+	display: flex;
+	flex-direction: column;
+		
+	@include media-breakpoint-up(md) { 
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0 -3%;
+	}
+	@include media-breakpoint-up(xl) {
+		margin: 0 -1.5%;
+	}
+
+
+
+	.lista-libros-item {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 3rem;
+		padding-bottom: 2rem;
+		border-bottom: 3px solid rgba(48,31,27,0.3);
+		
+		@include media-breakpoint-up(md) {
+			width: 50%;
+			padding: 0 3% 2rem 3%;
+			margin-bottom: 2.8rem;
+		}
+		@include media-breakpoint-up(xl) {
+			/*width: 33.3%;*/
+			width: calc(100% / 3);
+			padding: 0 1.5% 3rem 1.5%;
+		}
+
+
+		img {
+			border-radius: 4px;
+		}
+
+		p:last-child {
+			margin-top: auto;
+		}
+
+		.titulo {
+			font-size: 2.2rem;
+			line-height: 2.2rem;
+			margin: 2rem 0 0 0;
+
+			@include media-breakpoint-up(md) {
+				font-size: 1.8rem;
+				line-height: 2rem;
+				margin: 1.5rem 0 0 0;
+			}
+		}
+		.edicion {
+			font-family: $font-family-medium;
+			margin-bottom: 0;
+			font-size: 1.2rem;
+		}
+	}
+}
+
+
+.header-title {
+	margin-bottom: 2rem;
+	h1 {
+		@include media-breakpoint-up(md) {
+			margin-top: 30px;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 3rem;
+			margin-top: 55px;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 3.5rem;
+			margin-top: 75px;
+		}
+		@include media-breakpoint-up(xxl) {
+		    font-size: 4.5rem;
+    		margin-top: 85px;
+    	}
+	}
+}
+
+
+.talleres {
+	display: flex;
+	flex-direction: column;
+	
+	@include media-breakpoint-up(md) {
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.talleres-item {
+		margin-bottom: 2rem;
+		font-size: 1.6rem;
+		line-height: 1.8rem;
+
+		@include media-breakpoint-up(md) {
+			width: 48%;
+			margin-bottom: 0;
+			font-size: 1.4rem;
+			line-height: 1.5rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 45%;
+			font-size: 1.6rem;
+			line-height: 1.8rem;
+		}
+	}
+	.icono-talleres {
+		display: block;
+		background-color: rgba(9,66,147,0.1);
+		padding:  1rem 0.5rem;
+		text-align: center;
+
+		&:hover {
+			text-decoration: none;
+			color: #FFF;
+			background-color: rgba(9,66,147,0.3);
+		}
+
+		&.icono-estructura {
+			&:before {
+				display: table;
+			    content: "";
+			    background-image: url(../img/escritura-creativa.svg);
+			    width: 100%;
+			    height: 110px;
+			    margin-bottom: 10px;
+			    background-repeat: no-repeat;
+			    background-position: center;
+				
+				@include media-breakpoint-up(md) {
+					height: 100px;
+					background-size: 60px;
+				}
+				
+				@include media-breakpoint-up(lg) {
+					height: 110px;
+					background-size: auto;
+				}
+			}
+		}
+
+
+		&.icono-guion {
+			&:before {
+				display: table;
+			    content: "";
+			    background-image: url(../img/guion-cinematografico.svg);
+			    width: 100%;
+			    height: 110px;
+			    margin-bottom: 10px;
+			    background-repeat: no-repeat;
+			    background-position: center;
+				
+				@include media-breakpoint-up(md) {
+					height: 100px;
+					background-size: 60px;
+				}
+				
+				@include media-breakpoint-up(lg) {
+					height: 110px;
+					background-size: auto;
+				}
+			}
+		}		
+	}
+}

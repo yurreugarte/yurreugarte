@@ -1,0 +1,48 @@
+
+
+$font-family-regular: "ClashDisplay-Regular";
+$font-family-medium: "ClashDisplay-Medium";
+$font-family-semibold: "ClashDisplay-Semibold";
+$font-family-base: $font-family-regular;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1380px
+);
+
+$font-size-base: 1.25rem;
+$line-height-base: 1.6;
+
+$paragraph-margin-bottom:   2rem;
+
+$h1-font-size:  $font-size-base * 2;
+$h2-font-size:  $font-size-base * 1.5;
+$h3-font-size:  $font-size-base * 1.25;
+$h4-font-size:  $font-size-base * 1.20;
+$h5-font-size:  $font-size-base * 1.15;
+$h6-font-size:  $font-size-base;
+
+
+$border-radius:     50px;
+$border-radius-lg:  50px;
+$border-radius-sm:  50px;
+
+
+$primary:   #094293; //Azul
+$secondary: #FF8000; //Naranja
+$info:      #D90789; //Rosa
+
+$gris-contenido: #301F1B; //Gris
+
+$enlace-menu: $gris-contenido;
+$navbar-light-active-color: $primary;

@@ -1,0 +1,178 @@
+
+.menu-principal {
+	list-style-type: none;
+	padding: 0;
+	margin: 2rem 0 0 2rem;
+
+	@include media-breakpoint-up(md) { 
+		margin: 3rem 0 0 0;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 0 0 0 40px;
+		margin: 0 0 1rem 0;
+		font-size: 1.5rem;
+    	line-height: 2rem;
+		background-image: url(../img/piti-menu.png);
+		background-repeat: no-repeat;
+		background-position: 0 0.6rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+    	@include media-breakpoint-up(md) {
+			font-size: 1.2rem;
+			line-height: 1.7rem;
+			background-position: 0 0.4rem;
+    	}
+
+    	@include media-breakpoint-up(lg) {
+			font-size: 1.5rem;
+			line-height: 2rem;
+			background-position: 0 0.6rem;
+    	}
+
+    	@include media-breakpoint-up(xl) { 
+    		font-size: 1.7rem;
+    		line-height: 2.2rem;  
+			background-position: 0 0.7rem;		
+    	}
+
+    	@include media-breakpoint-up(xxl) { 
+    		margin: 0 0 1.2rem 0;
+			font-size: 2.2rem;
+			line-height: 3rem;
+			background-position: 0 1.1rem; 
+    	}
+	}
+
+	a {
+  		font-family: $font-family-semibold;
+		color: $enlace-menu;
+		text-decoration: underline;
+
+		&:hover {
+			color: $navbar-light-active-color;
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+.home {
+	.menu-principal {
+
+		@include media-breakpoint-up(md) { 
+			margin: 4rem 0 0 2rem;
+		}
+
+		li {
+			list-style-type: none;
+			padding: 0 0 0 40px;
+			margin: 0 0 1rem 0;
+			font-size: 1.5rem;
+	    	line-height: 2rem;
+			background-image: url(../img/piti-menu.png);
+			background-repeat: no-repeat;
+			background-position: 0 0.6rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+	    	@include media-breakpoint-up(xl) { 
+	    		font-size: 2rem;
+	    		line-height: 2.8rem;  
+				background-position: 0 0.9rem;		
+	    	}
+
+	    	@include media-breakpoint-up(xxl) {
+	    		margin: 0 0 1.2rem 0;
+				font-size: 2.5rem;
+		    	line-height: 4rem;
+				background-position: 0 1.6rem;  
+	    	}
+		}
+
+	}
+}
+
+.yurre {
+    @include media-breakpoint-up(md) {  
+    	padding-right: 30px;
+    }
+    @include media-breakpoint-up(lg) {  
+    	padding-right: 50px;
+    }
+    @include media-breakpoint-up(xl) {  
+    	padding-right: 80px;
+    }
+}
+
+.home {
+	.yurre {
+		padding-right: 0;
+	    @include media-breakpoint-down(md) {  
+			width: 75%;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+
+.navbar-brand {
+	img {
+		width: 250px;
+		padding: 5px 0 10px 0;
+	}
+}
+.navbar-toggler {
+	border-radius: 10px;
+}
+.nav-link {
+	padding: 0;
+}
+
+.navbar {
+	padding: 0.5rem 1rem 0 1rem;
+	margin-bottom: 2rem;
+}
+.navbar-light {
+	.navbar-nav {
+		.nav-link {
+		  color: $enlace-menu;
+
+			&:hover {
+				color: $navbar-light-active-color;
+				text-decoration: none;
+			}
+		}
+	    .show > .nav-link,
+		.active > .nav-link,
+		.nav-link.show,
+		.nav-link.active {
+			color: $navbar-light-active-color;
+			text-decoration: none;
+			cursor: default;
+		}
+	}
+}
+
+.navbar-collapse {
+	.auxiliar {
+		background-color: #f0f0f0;
+		text-align: center;
+		padding: 15px;
+		margin: 2rem -1rem 0 -1rem;
+	}
+}
+
+
+.col-sticky {
+	position: sticky;
+	top: 25px;
+}
