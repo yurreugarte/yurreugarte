@@ -5387,8 +5387,8 @@ h2, .h2 {
   font-family: "ClashDisplay-Semibold"; }
 
 .btn {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  /*font-size: 1rem;
+  line-height: 1.5rem;*/
   padding: 0.375rem 1.563rem; }
 
 .btn-secondary {
@@ -5426,6 +5426,12 @@ h2, .h2 {
       border-radius: 4px; }
     .lista-libros .lista-libros-item p:last-child {
       margin-top: auto; }
+    .lista-libros .lista-libros-item .btn-imagen img {
+      border-radius: 0;
+      width: 46px;
+      margin-left: 10px; }
+    .lista-libros .lista-libros-item .btn-imagen:hover {
+      opacity: 0.8; }
     .lista-libros .lista-libros-item .titulo {
       font-size: 2.2rem;
       line-height: 2.2rem;
@@ -5485,10 +5491,6 @@ h2, .h2 {
     background-color: rgba(9, 66, 147, 0.1);
     padding: 1rem 0.5rem;
     text-align: center; }
-    .talleres .icono-talleres:hover {
-      text-decoration: none;
-      color: #FFF;
-      background-color: rgba(9, 66, 147, 0.3); }
     .talleres .icono-talleres.icono-estructura:before {
       display: table;
       content: "";
