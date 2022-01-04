@@ -10,8 +10,8 @@
     <meta name="description" content="">
     <!--  // Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="/css/my-theme.css?v01">
-    <!--<link rel="stylesheet" href="/css/my-theme.min.css?v01">-->
+    <link rel="stylesheet" href="css/my-theme.css?v01">
+    <!--<link rel="stylesheet" href="css/my-theme.min.css?v01">-->
 
     <!--
         // https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-no-js-class
@@ -29,53 +29,50 @@
 
 </head>
 
-<body>
+<body class="home">
     <div id="grid-body">   
 
         <header class="header text-primary">
             <div class="auxiliar">
-                <a href="index.html" class="btn btn-link">Hasiera / inicio</a>
+                <a href="#" class="btn btn-secondary">Kontaktua</a>
+                <a href="es/index.html" class="btn btn-link">Castellano</a>
             </div>
         </header>
 
         <div class="grid-contenido">
-            <div class="container">
-                <div class="row">
-                    <div class="d-none d-md-block col-md-3 pr-5">
-                        <div class="col-sticky">
-                            <div class="yurre">
-                                <a href="index.html"><img src="../img/yurre-ugarte-eu.svg" alt="Yurre Ugarte -  Escritora y guionista"></a>
-                            </div>                         
-                        </div>
+            <div class="home-contenido">
+                <div class="home-contenido-left">
+                    <div class="yurre">
+                        <img src="img/yurre-ugarte-eu.svg" alt="Yurre Ugarte -  Idazlea eta gidoilaria">
                     </div>
-                    <div class="col-md-8">
-                        <div class="header-title">
-                            <h1>Página no encontrada</h1> 
-                            <p class="mt-3">No puede visitar esta página debido a:</p>
-                            <ul>
-                                <li>Un marcador o favorito caducado.</li>
-                                <li>Un motor de búsquedas que tiene un listado caducado para este sitio</li>
-                                <li>Una dirección mal escrita.</li>
-                                <li>Usted no tiene acceso a esta página.</li>
-                                <li>No se pudo encontrar el recurso solicitado.</li>
-                                <li>Se ha producido un error mientras se procesaba su solicitud.</li>
-                            </ul>                            
-                            <p>Intentaremos solucionar este problema, mientras tanto puede seguir con nosotros.</p>
-
-                            <p class="mt-5"><a href="index.html" class="btn btn-primary">Página de inicio</a></p>
-                          
-                        </div>
-
+                    <div class="menu">
+                        <ul class="menu-principal">
+                            <li><a href="eu/liburuak.html">Liburuak</a></li>
+                            <li><a href="eu/film-laburrak.html">Film laburrak</a></li>
+                            <li><a href="eu/tailerrak.html">Ikastaroak eta tailerrak</a></li>
+                            <li><a href="eu/egilea.html">Egilea</a></li>
+                        </ul>
                     </div>
+                </div>
+                <div class="home-contenido-right">
+                    <img src="img/home-img.jpg" alt="">
                 </div>                
             </div>
         </div>
 
+        <footer class="footer">   
+			<div class="footer-contenido">
+				<div class="footer-texto">
+					Yurre Ugarte
+					<a href="mailto:yurre.miren@gmail.com" class="btn btn-secondary ml-4">yurre.miren@gmail.com</a>
+				</div>                
+			</div>		
+        </footer>
 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 
     <script src="../js/my-theme.min.js"></script>
 
