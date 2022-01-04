@@ -2,6 +2,13 @@ html {
 	scroll-behavior: smooth;
 }
 
+body {
+
+	@include media-breakpoint-down(sm) {
+		font-size: 1.50rem;
+	}
+}
+
 h1, .h1 { font-family: $font-family-semibold; }
 h2, .h2 { font-family: $font-family-semibold; }
 
@@ -58,6 +65,14 @@ h2, .h2 { font-family: $font-family-semibold; }
 			margin-top: auto;
 		}
 
+		.boton {
+			.btn {
+				@include media-breakpoint-between(md,lg) {
+					font-size: 1rem;
+				}
+			}
+		}
+
 		.btn-imagen {
 			img {
 				border-radius: 0;
@@ -84,6 +99,30 @@ h2, .h2 { font-family: $font-family-semibold; }
 			font-family: $font-family-medium;
 			margin-bottom: 0;
 			font-size: 1.2rem;
+		}
+
+		&.no-border-bottom-xs-sm {
+			@include media-breakpoint-between(xs, sm) { 
+				border-bottom: none;
+				padding-bottom: 0;
+				margin-bottom: 1rem;
+			}
+		}
+
+		&.no-border-bottom-md-lg {
+			@include media-breakpoint-between(md, lg) { 
+				border-bottom: none;
+				padding-bottom: 0;
+				margin-bottom: 1rem;
+			}
+		}
+
+		&.no-border-bottom-xl {
+			@include media-breakpoint-up(xl) { 
+				border-bottom: none;
+				padding-bottom: 0;
+				margin-bottom: 1rem;
+			}
 		}
 	}
 }
@@ -125,11 +164,22 @@ h2, .h2 { font-family: $font-family-semibold; }
 		font-size: 1.6rem;
 		line-height: 1.8rem;
 
+		@include media-breakpoint-down(sm) {
+			br {
+				display: none;
+			}
+		}
+		@include media-breakpoint-up(xxl) {
+			br {
+				display: none;
+			}
+		}
+
 		@include media-breakpoint-up(md) {
 			width: 48%;
 			margin-bottom: 0;
 			font-size: 1.4rem;
-			line-height: 1.5rem;
+			line-height: 1.7rem;
 		}
 
 		@include media-breakpoint-up(lg) {
@@ -137,12 +187,24 @@ h2, .h2 { font-family: $font-family-semibold; }
 			font-size: 1.6rem;
 			line-height: 1.8rem;
 		}
+
+		@include media-breakpoint-up(xl) {
+			font-size: 1.8rem;
+			line-height: 2rem;
+		}
 	}
 	.icono-talleres {
 		display: block;
 		background-color: rgba(9,66,147,0.1);
 		padding:  1rem 0.5rem;
 		text-align: center;
+
+		@include media-breakpoint-up(lg) {
+			padding: 1.5rem 1rem;
+		}
+		@include media-breakpoint-up(xl) {
+			padding: 2rem 1rem;
+		}
 
 		&.icono-estructura {
 			&:before {
