@@ -2,7 +2,7 @@
 .menu-principal {
 	list-style-type: none;
 	padding: 0;
-	margin: 2rem 0 0 2rem;
+	margin: 2rem 0 0 1rem;
 
 	@include media-breakpoint-up(md) { 
 		margin: 3rem 0 0 0;
@@ -58,6 +58,7 @@
 			text-decoration: none;
 		}
 	}
+
 }
 
 
@@ -135,6 +136,10 @@
 }
 .nav-link {
 	padding: 0;
+}
+
+.navbar-toggler {
+	border: none;
 }
 
 .navbar {

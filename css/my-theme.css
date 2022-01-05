@@ -5253,7 +5253,7 @@ footer {
 .menu-principal {
   list-style-type: none;
   padding: 0;
-  margin: 2rem 0 0 2rem; }
+  margin: 2rem 0 0 1rem; }
   @media (min-width: 768px) {
     .menu-principal {
       margin: 3rem 0 0 0; } }
@@ -5349,6 +5349,9 @@ footer {
 
 .nav-link {
   padding: 0; }
+
+.navbar-toggler {
+  border: none; }
 
 .navbar {
   padding: 0.5rem 1rem 0 1rem;
