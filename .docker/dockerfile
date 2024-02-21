@@ -1,0 +1,30 @@
+# Dockerfile Apache + PHP
+# HTTPS. En la carpeta \\fs\adimedia_sistemas\gestion\rootCA adimedia\ se encuentran los archivos necesarios para el certificado (php-adimedia-local.crt y php-adimedia-local.key). Copiar los actuales a esta carpeta dockerfile.
+FROM ubuntu:22.04
+RUN apt-get update -y
+RUN apt-get upgrade -y
+ENV TZ=Europe/Madrid
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get install -y locales locales-all
+RUN apt-get install -y apache2
+COPY 000-default.conf /etc/apache2/sites-available/default.conf
+COPY 000-default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+RUN a2enmod rewrite vhost_alias headers ssl
+RUN mkdir /etc/apache2/ssl
+COPY php-adimedia-org.crt /etc/apache2/ssl/
+COPY php-adimedia-org.key /etc/apache2/ssl/
+RUN a2dissite 000-default.conf
+RUN rm /etc/apache2/sites-available/000-default.conf
+RUN a2ensite default.conf
+RUN a2ensite default-ssl.conf
+
+RUN apt install -y software-properties-common
+RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update -y
+RUN apt-get install -y php8.0 vim net-tools php8.0-mysql php-pear php8.0-curl php8.0-mbstring php-fxsl php8.0-gd php8.0-ldap php8.0-xml php-pgsql unzip nano mysql-client php-zip cron wget php-smbclient php8.0-soap
+COPY php.ini /etc/php/8.0/apache2/php.ini
+
+RUN service apache2 restart
+EXPOSE 80
+EXPOSE 443
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

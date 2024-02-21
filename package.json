@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "node .docker/start.js"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5",
+    "open": "^8.4.2",
+    "shelljs": "^0.8.5",
+    "tcp-port-used": "^1.0.2",
+    "thread-sleep": "^2.2.0"
+  }
+}

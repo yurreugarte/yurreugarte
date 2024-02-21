@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    image: php80
+    container_name: ${APP_NAME}
+    user: '1000:1000'
+    build: .
+    ports:
+      - ${APP_PORT_HTTP}:80
+      - ${APP_PORT_HTTPS}:443
+    volumes: 
+      - ../:/var/www
+      - ../.apache/log/apache2/:/var/log/apache2
+      - ../.apache/run/apache2/:/var/run/apache2
+      - ../.apache/run/apache2.pid:/var/run/apache2.pid
+      - ../.apache/lock/apache2/:/var/lock/apache2
+    environment:
+      TZ: "Europe/Madrid"
+    extra_hosts:
+      - "mariadb1011.adimedia.org:192.168.2.50"
+      - "mysql.adimedia.org:192.168.2.27"
